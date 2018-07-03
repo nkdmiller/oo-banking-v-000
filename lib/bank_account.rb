@@ -6,11 +6,11 @@ class BankAccount
     @balance = 1000
     @status = "open"
   end
-  def deposit
-
+  def deposit(money)
+    @balance += money
   end
   def display_balance
-
+    return @balance
   end
   def valid?
     if @status == "open" && @balance > 0
