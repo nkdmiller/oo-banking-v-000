@@ -25,9 +25,8 @@ class Transfer
       self.status = "complete"
       @@executed << self
     else
-      return "Transaction rejected. Please check your account balance."
       self.status = "rejected"
-      binding.pry
+      return "Transaction rejected. Please check your account balance."
     end
   end
   def reverse_transfer(transfer)
