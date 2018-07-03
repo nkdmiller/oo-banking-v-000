@@ -35,6 +35,7 @@ class Transfer
       @receiver.balance -= @amount
       @@executed.delete(self)
       @@all.delete(self)
+      self.status = "rejected"
     end
   end
 end
