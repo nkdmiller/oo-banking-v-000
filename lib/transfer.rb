@@ -27,6 +27,7 @@ class Transfer
     else
       return "Transaction rejected. Please check your account balance."
       self.status = "rejected"
+      binding.pry
     end
   end
   def reverse_transfer(transfer)
