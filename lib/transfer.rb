@@ -1,3 +1,4 @@
+require 'pry'
 class Transfer
   @@all = []
   @@executed = []
@@ -17,6 +18,7 @@ class Transfer
     end
   end
   def execute_transaction
+    binding.pry
     if valid? == true && @@executed.include?(self) == false
       @sender.balance -= @amount
       @receiver.balance += @amount
