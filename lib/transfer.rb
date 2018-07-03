@@ -16,7 +16,7 @@ class Transfer
       return false
     end
   end
-  def execute_transfer
+  def execute_transaction
     if valid? == true
       @sender.balance -= @amount
       @receiver.balance += @amount
