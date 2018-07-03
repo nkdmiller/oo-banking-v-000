@@ -20,6 +20,7 @@ class Transfer
     if valid? == true
       @sender.balance -= @amount
       @receiver.balance += @amount
+      self.status = "complete"
       @@executed << self
     end
   end
