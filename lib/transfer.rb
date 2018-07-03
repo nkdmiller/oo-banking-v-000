@@ -19,7 +19,7 @@ class Transfer
   end
   def execute_transaction
     binding.pry
-    if valid? == true && @@executed.include?(self) == false
+    if valid? == true && @@executed.include?(self) == false && (@amount > @sender.balance) == false
       @sender.balance -= @amount
       @receiver.balance += @amount
       self.status = "complete"
