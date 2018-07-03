@@ -30,9 +30,11 @@ class Transfer
     end
   end
   def reverse_transfer
-    @sender.balance -= @amount
-    @receiver.balance += @amount
-    @@executed.delete(self)
-    @@all.delete(self)
+    if @@executed.include?(self)
+      @sender.balance += @amount
+      @receiver.balance -= @amount
+      @@executed.delete(self)
+      @@all.delete(self)
+    end
   end
 end
